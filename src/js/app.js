@@ -1,3 +1,5 @@
+import { person, sayHello } from './lib';
+
 async function getPosts() {
   const response = await fetch('https://jsonplaceholder.typicode.com/posts');
 
@@ -7,8 +9,6 @@ async function getPosts() {
 }
 
 getPosts().then(post => console.log(post));
-
-import { person, sayHello } from '../lib';
 
 const gogo = () => console.log('gogo');
 
