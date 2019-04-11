@@ -10,9 +10,9 @@ async function getPosts() {
 
 getPosts().then(post => console.log(post));
 
-const gogo = () => console.log('gogo');
+const gogo = () => console.log('cssc');
 
 gogo();
 
-console.log(sayHello('bas'));
+console.log(sayHello('ww'));
 console.log(person.name);

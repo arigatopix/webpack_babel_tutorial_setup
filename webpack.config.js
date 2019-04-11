@@ -1,5 +1,6 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path'),
+  HtmlWebpackPlugin = require('html-webpack-plugin'),
+  webpack = require('webpack');
 
 module.exports = {
   entry: ['@babel/polyfill', './src/js/app.js'],
@@ -7,6 +8,17 @@ module.exports = {
     filename: 'js/app.bundle.js',
     path: path.resolve(__dirname, 'build')
   },
+  devServer: {
+    contentBase: './build',
+    hot: true
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: './src/index.html'
+    })
+  ],
   module: {
     rules: [
       {
@@ -20,14 +32,5 @@ module.exports = {
         }
       }
     ]
-  },
-  devServer: {
-    contentBase: './build'
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './src/index.html'
-    })
-  ]
+  }
 };
