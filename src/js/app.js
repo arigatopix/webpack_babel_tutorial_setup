@@ -8,7 +8,7 @@ async function getPosts() {
 
 getPosts().then(post => console.log(post));
 
-import { person, sayHello } from './lib';
+import { person, sayHello } from '../lib';
 
 const gogo = () => console.log('gogo');
 
